@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Halloween AR</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            overflow: hidden;
+        }
+
+        #camera {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #message {
+            position: fixed;
+            bottom: 30px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video id="camera" autoplay playsinline></video>
+
+    <div id="message">
+        INICIANDO DETECTOR...
+    </div>
+
+    <script>
+        const video = document.getElementById("camera");
+        const message = document.getElementById("message");
+
+        async function iniciarCamara() {
+
+            try {
+
+                const stream =
+                    await navigator.mediaDevices.getUserMedia({
+                        video: {
+                            facingMode: "environment"
+                        },
+                        audio: false
+                    });
+
+                video.srcObject = stream;
+
+                message.textContent =
+                    "ANOMALÍA: NO DETECTADA";
+
+            } catch (error) {
+
+                message.textContent =
+                    "NO SE PUDO ACCEDER A LA CÁMARA";
+
+                console.error(error);
+            }
+        }
+
+        iniciarCamara();
+    </script>
+
+</body>
+</html>
