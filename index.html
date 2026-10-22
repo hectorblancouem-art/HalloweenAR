@@ -33,6 +33,7 @@
 
     button {
       margin-top: 10px;
+      margin-right: 5px;
       padding: 10px;
       background: black;
       color: #00ff88;
@@ -47,15 +48,20 @@
 
   <div id="hud">
     <div>CAMARA ESPECTRAL</div>
-    <div id="alpha">Yaw: --</div>
-    <div id="beta">Pitch: --</div>
-    <div id="gamma">Roll: --</div>
+
+    <div id="yaw">Yaw real: --</div>
+    <div id="relativeYaw">Yaw calibrado: --</div>
 
     <button id="startButton">INICIAR</button>
+    <button id="calibrateButton">CALIBRAR</button>
   </div>
 
   <script>
     const video = document.getElementById("camera");
+
+    let currentYaw = 0;
+    let referenceYaw = 0;
+    let calibrated = false;
 
     async function startCamera() {
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -68,22 +74,33 @@
       video.srcObject = stream;
     }
 
+    function normalizeAngle(angle) {
+      angle = angle % 360;
+
+      if (angle > 180) angle -= 360;
+      if (angle < -180) angle += 360;
+
+      return angle;
+    }
+
     function startOrientation() {
 
       window.addEventListener("deviceorientation", (event) => {
 
-        const alpha = event.alpha ?? 0;
-        const beta = event.beta ?? 0;
-        const gamma = event.gamma ?? 0;
+        currentYaw = event.alpha ?? 0;
 
-        document.getElementById("alpha").textContent =
-          "Yaw: " + alpha.toFixed(1);
+        document.getElementById("yaw").textContent =
+          "Yaw real: " + currentYaw.toFixed(1);
 
-        document.getElementById("beta").textContent =
-          "Pitch: " + beta.toFixed(1);
+        if (calibrated) {
 
-        document.getElementById("gamma").textContent =
-          "Roll: " + gamma.toFixed(1);
+          let relative = normalizeAngle(
+            currentYaw - referenceYaw
+          );
+
+          document.getElementById("relativeYaw").textContent =
+            "Yaw calibrado: " + relative.toFixed(1);
+        }
       });
     }
 
@@ -108,8 +125,19 @@
         } else {
           startOrientation();
         }
-
       });
+
+    document
+      .getElementById("calibrateButton")
+      .addEventListener("click", () => {
+
+        referenceYaw = currentYaw;
+        calibrated = true;
+
+        document.getElementById("relativeYaw").textContent =
+          "Yaw calibrado: 0.0";
+      });
+
   </script>
 
 </body>
