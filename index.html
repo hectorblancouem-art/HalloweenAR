@@ -3,125 +3,139 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>HalloweenAR | Invasión de Arañas</title>
+  <title>HalloweenAR | Experiencia inmersiva</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       min-height: 100vh;
+      padding: 30px 20px;
       background:
-        radial-gradient(circle at top, #402012, #090909 70%);
-      color: #f5efe8;
+        radial-gradient(ellipse at top, #42200e, #100c0c 65%, #050505);
+      color: #f4e9df;
       font-family: Arial, sans-serif;
-      text-align: center;
       display: flex;
-      align-items: center;
       justify-content: center;
-      padding: 24px;
+      align-items: center;
+      text-align: center;
     }
 
     main {
-      max-width: 560px;
       width: 100%;
+      max-width: 520px;
     }
 
-    .spider {
-      font-size: 84px;
-      margin-bottom: 12px;
+    .logo {
+      display: block;
+      width: 165px;
+      height: 165px;
+      object-fit: contain;
+      margin: 0 auto 12px;
+      border-radius: 24px;
     }
 
     h1 {
-      font-size: clamp(42px, 10vw, 72px);
-      color: #ff811c;
-      margin: 0;
-      letter-spacing: 2px;
-      text-shadow: 0 0 25px #a84312;
+      font-family: 'Creepster', cursive;
+      color: #ff8524;
+      font-size: clamp(54px, 12vw, 85px);
+      font-weight: normal;
+      margin: 8px 0;
+      text-shadow: 0 0 30px #a13d0b;
     }
 
     .subtitle {
-      font-size: 22px;
-      margin: 18px 0;
+      font-size: 23px;
       font-weight: bold;
+      letter-spacing: 2px;
+      margin: 14px 0 25px;
     }
 
     .description {
-      color: #cac1b9;
-      font-size: 17px;
+      font-size: 18px;
+      color: #d5c7ba;
       line-height: 1.7;
     }
 
     .download {
       display: block;
-      margin: 32px auto 12px;
-      padding: 20px;
-      background: #ef7218;
-      color: #17100b;
+      margin: 32px 0 12px;
+      padding: 21px 14px;
+      color: #180e08;
+      background: #ff8727;
       border-radius: 14px;
-      text-decoration: none;
-      font-size: 20px;
       font-weight: bold;
-      box-shadow: 0 0 25px #7f340c;
+      font-size: 20px;
+      text-decoration: none;
+      box-shadow: 0 0 25px #6b300f;
     }
 
     .download:hover {
-      background: #ff963d;
+      background: #ffa34d;
     }
 
-    .steps {
-      margin-top: 30px;
-      padding: 24px;
-      border: 1px solid #694122;
-      background: #17110f;
+    .instructions {
+      margin-top: 32px;
+      padding: 22px;
+      background: #191310;
+      border: 1px solid #674021;
       border-radius: 16px;
       text-align: left;
     }
 
-    .steps h2 {
+    .instructions h2 {
       color: #ff963d;
+      font-size: 21px;
       margin-top: 0;
     }
 
-    .steps p {
+    .instructions p {
       line-height: 1.7;
     }
 
-    .note {
+    .small {
+      margin-top: 18px;
+      color: #aaa09a;
       font-size: 13px;
-      color: #a9a19b;
       line-height: 1.6;
-      margin-top: 20px;
     }
 
     footer {
       margin-top: 36px;
+      color: #81746b;
       font-size: 12px;
-      color: #746d68;
     }
   </style>
 </head>
 
 <body>
   <main>
-    <div class="spider">🕷️</div>
+
+    <img
+      src="logo.png"
+      alt="HalloweenAR"
+      class="logo"
+      onerror="this.style.display='none'"
+    >
 
     <h1>HALLOWEEN AR</h1>
 
-    <p class="subtitle">
-      LA INVASIÓN HA COMENZADO
-    </p>
+    <p class="subtitle">EXPERIENCIA INMERSIVA</p>
 
     <p class="description">
-      ¿Y si tu casa se llenara de arañas?
+      Este Halloween, tu casa no será la misma.
       <br>
       Una experiencia de realidad aumentada
-      donde 100 arañas invaden tu espacio real.
+      donde lo virtual invade tu entorno.
+      <br><br>
+      ¿Te atreves a descubrir qué sucede?
     </p>
 
     <a class="download"
@@ -129,37 +143,44 @@
       📱 DESCARGAR PARA ANDROID
     </a>
 
-    <p class="note">
-      Descarga gratuita · Archivo APK ·
-      Requiere un Android compatible con ARCore
+    <p class="small">
+      Descarga gratuita · Android compatible con ARCore
     </p>
 
-    <section class="steps">
-      <h2>🎃 ¿Cómo jugar?</h2>
+    <section class="instructions">
+      <h2>🎃 Antes de comenzar</h2>
 
-      <p>1. Descarga e instala HalloweenAR.</p>
+      <p>
+        1. Descarga e instala la aplicación.
+      </p>
 
-      <p>2. Abre la aplicación y permite el acceso a la cámara.</p>
+      <p>
+        2. Abre HalloweenAR y permite el acceso
+        a la cámara.
+      </p>
 
-      <p>3. Posa la arañita de la pantalla sobre el felpudo.</p>
+      <p>
+        3. Sigue las indicaciones que aparecen
+        en pantalla.
+      </p>
 
-      <p>4. Cuando cambie a verde, comenzará la invasión.</p>
-
-      <p>5. ¡Muévete! Las arañas irán hacia ti.</p>
+      <p>
+        4. ¡Disfruta de la experiencia!
+      </p>
     </section>
 
-    <p class="note">
-      ⚠️ Utiliza la experiencia en una zona
-      despejada y presta atención a tu entorno.
-      La realidad aumentada no muestra
-      necesariamente todos los obstáculos.
+    <p class="small">
+      ⚠️ Utiliza la aplicación en una zona despejada.
+      Presta atención a tu entorno mientras
+      disfrutas de la experiencia.
     </p>
 
     <footer>
-      HALLOWEENAR · 2026
+      HalloweenAR © 2026
       <br>
       Una experiencia de Héctor Blanco
     </footer>
+
   </main>
 </body>
 </html>
