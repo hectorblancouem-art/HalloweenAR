@@ -3,25 +3,42 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
 
   <title>HalloweenAR | Experiencia inmersiva</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+    rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
       min-height: 100vh;
       padding: 30px 20px;
+
       background:
-        radial-gradient(ellipse at top, #42200e, #100c0c 65%, #050505);
+        radial-gradient(
+          ellipse at top,
+          #42200e,
+          #100c0c 65%,
+          #050505
+        );
+
       color: #f4e9df;
       font-family: Arial, sans-serif;
+
       display: flex;
       justify-content: center;
       align-items: center;
@@ -48,7 +65,9 @@
       font-size: clamp(54px, 12vw, 85px);
       font-weight: normal;
       margin: 8px 0;
-      text-shadow: 0 0 30px #a13d0b;
+
+      text-shadow:
+        0 0 30px #a13d0b;
     }
 
     .subtitle {
@@ -68,12 +87,15 @@
       display: block;
       margin: 32px 0 12px;
       padding: 21px 14px;
+
       color: #180e08;
       background: #ff8727;
+
       border-radius: 14px;
       font-weight: bold;
       font-size: 20px;
       text-decoration: none;
+
       box-shadow: 0 0 25px #6b300f;
     }
 
@@ -84,9 +106,11 @@
     .instructions {
       margin-top: 32px;
       padding: 22px;
+
       background: #191310;
       border: 1px solid #674021;
       border-radius: 16px;
+
       text-align: left;
     }
 
@@ -111,6 +135,7 @@
       margin-top: 36px;
       color: #81746b;
       font-size: 12px;
+      line-height: 1.7;
     }
   </style>
 </head>
@@ -118,28 +143,37 @@
 <body>
   <main>
 
+    <!-- LOGO ORIGINAL DE LA APP -->
     <img
-      src="logo.png"
-      alt="HalloweenAR"
+      src="logo.png..png"
+      alt="Logo HalloweenAR"
       class="logo"
-      onerror="this.style.display='none'"
     >
 
+    <!-- TITULO -->
     <h1>HALLOWEEN AR</h1>
 
-    <p class="subtitle">EXPERIENCIA INMERSIVA</p>
-
-    <p class="description">
-      Este Halloween, tu casa no será la misma.
-      <br>
-      Una experiencia de realidad aumentada
-      donde lo virtual invade tu entorno.
-      <br><br>
-      ¿Te atreves a descubrir qué sucede?
+    <p class="subtitle">
+      EXPERIENCIA INMERSIVA
     </p>
 
-    <a class="download"
-       href="https://github.com/hectorblancouem-art/HalloweenAR/releases/download/v1.0/HalloweenAR.apk">
+    <!-- DESCRIPCION SIN SPOILERS -->
+    <p class="description">
+      Este Halloween, la decoración cobra vida.
+      <br><br>
+      Apunta con la cámara al felpudo de nuestra
+      puerta decorada con telas de araña
+      y descubre lo que sucede.
+      <br><br>
+      <strong>
+        ¿Te atreves a descubrir qué pasa?
+      </strong>
+    </p>
+
+    <!-- DESCARGA DE LA APP -->
+    <a
+      class="download"
+      href="https://github.com/hectorblancouem-art/HalloweenAR/releases/download/v1.0/HalloweenAR.apk">
       📱 DESCARGAR PARA ANDROID
     </a>
 
@@ -147,34 +181,40 @@
       Descarga gratuita · Android compatible con ARCore
     </p>
 
+    <!-- INSTRUCCIONES -->
     <section class="instructions">
+
       <h2>🎃 Antes de comenzar</h2>
 
       <p>
-        1. Descarga e instala la aplicación.
+        1. Descarga e instala HalloweenAR.
       </p>
 
       <p>
-        2. Abre HalloweenAR y permite el acceso
-        a la cámara.
+        2. Abre la aplicación y permite
+        el acceso a la cámara.
       </p>
 
       <p>
-        3. Sigue las indicaciones que aparecen
-        en pantalla.
+        3. Dirige la cámara hacia el felpudo
+        de nuestra decoración.
       </p>
 
       <p>
-        4. ¡Disfruta de la experiencia!
+        4. Sigue las indicaciones en pantalla
+        y disfruta de la experiencia.
       </p>
+
     </section>
 
+    <!-- SEGURIDAD -->
     <p class="small">
       ⚠️ Utiliza la aplicación en una zona despejada.
       Presta atención a tu entorno mientras
       disfrutas de la experiencia.
     </p>
 
+    <!-- PIE DE PAGINA -->
     <footer>
       HalloweenAR © 2026
       <br>
