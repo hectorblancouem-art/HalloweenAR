@@ -3,16 +3,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>HalloweenAR | Experiencia inmersiva</title>
 
   <link rel="preconnect"
         href="https://fonts.googleapis.com">
+
   <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+        href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
@@ -28,17 +27,15 @@
       min-height: 100vh;
       padding: 30px 20px;
 
-      background:
-        radial-gradient(
-          ellipse at top,
-          #42200e,
-          #100c0c 65%,
-          #050505
-        );
+      background: radial-gradient(
+        ellipse at top,
+        #42200e,
+        #100c0c 65%,
+        #050505
+      );
 
       color: #f4e9df;
       font-family: Arial, sans-serif;
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -50,6 +47,8 @@
       max-width: 520px;
     }
 
+    /* LOGO */
+
     .logo {
       display: block;
       width: 165px;
@@ -59,15 +58,15 @@
       border-radius: 24px;
     }
 
+    /* TITULO */
+
     h1 {
       font-family: 'Creepster', cursive;
       color: #ff8524;
       font-size: clamp(54px, 12vw, 85px);
       font-weight: normal;
       margin: 8px 0;
-
-      text-shadow:
-        0 0 30px #a13d0b;
+      text-shadow: 0 0 30px #a13d0b;
     }
 
     .subtitle {
@@ -77,11 +76,15 @@
       margin: 14px 0 25px;
     }
 
+    /* DESCRIPCION */
+
     .description {
       font-size: 18px;
       color: #d5c7ba;
       line-height: 1.7;
     }
+
+    /* BOTON DESCARGA */
 
     .download {
       display: block;
@@ -97,20 +100,55 @@
       text-decoration: none;
 
       box-shadow: 0 0 25px #6b300f;
+      transition: background 0.2s;
     }
 
     .download:hover {
       background: #ffa34d;
     }
 
+    /* ANIMACION DE ESPERA */
+
+    #downloadStatus {
+      display: none;
+      margin: 18px 0;
+      color: #ffb16b;
+    }
+
+    .loading-bar {
+      width: 100%;
+      height: 8px;
+      background: #3d2920;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .loading-progress {
+      width: 30%;
+      height: 100%;
+      background: #ff8727;
+      border-radius: 20px;
+      animation: loading 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes loading {
+      from {
+        transform: translateX(-100%);
+      }
+
+      to {
+        transform: translateX(330%);
+      }
+    }
+
+    /* INSTRUCCIONES */
+
     .instructions {
       margin-top: 32px;
       padding: 22px;
-
       background: #191310;
       border: 1px solid #674021;
       border-radius: 16px;
-
       text-align: left;
     }
 
@@ -123,6 +161,8 @@
     .instructions p {
       line-height: 1.7;
     }
+
+    /* AVISOS */
 
     .small {
       margin-top: 18px;
@@ -143,7 +183,7 @@
 <body>
   <main>
 
-    <!-- LOGO ORIGINAL DE LA APP -->
+    <!-- LOGO ORIGINAL -->
     <img
       src="logo.png..png"
       alt="Logo HalloweenAR"
@@ -166,46 +206,86 @@
       y descubre lo que sucede.
       <br><br>
       <strong>
-        ¿Te atreves...?
+        ¿Te atreves a descubrir qué pasa?
       </strong>
     </p>
 
-    <!-- DESCARGA DE LA APP -->
+    <!-- DESCARGA APK -->
     <a
+      id="downloadButton"
       class="download"
       href="https://github.com/hectorblancouem-art/HalloweenAR/releases/download/v1.0/HalloweenAR.apk">
       📱 DESCARGAR PARA ANDROID
     </a>
 
+    <!-- MENSAJE DE ESPERA -->
+    <div id="downloadStatus"
+         role="status"
+         aria-live="polite">
+
+      <p>
+        ⏳ Preparando descarga de HalloweenAR...
+      </p>
+
+      <div class="loading-bar">
+        <div class="loading-progress"></div>
+      </div>
+
+      <p class="small">
+        La descarga se gestiona desde tu navegador.
+        Consulta allí el progreso real.
+      </p>
+    </div>
+
     <p class="small">
       Descarga gratuita · Android compatible con ARCore
     </p>
 
+    <p class="small">
+      El archivo APK se descarga desde GitHub.
+      Android puede mostrar una advertencia
+      de seguridad al instalar aplicaciones
+      externas a Google Play.
+    </p>
+
     <!-- INSTRUCCIONES -->
-   
-<section class="instructions">
-  <h2>🎃 Antes de comenzar</h2>
+    <section class="instructions">
 
-  <p>1. Descarga e instala HalloweenAR.</p>
+      <h2>🎃 Antes de comenzar</h2>
 
-  <p>2. Abre la aplicación y permite el acceso a la cámara.</p>
+      <p>
+        1. Descarga e instala HalloweenAR.
+      </p>
 
-  <p>3. Sigue las instrucciones que aparecen en pantalla.</p>
+      <p>
+        2. Abre la aplicación y permite
+        el acceso a la cámara.
+      </p>
 
-  <p>4. Apunta con la arañita de la pantalla
-    al felpudo o a una superficie plana
-    frente a la puerta.
-    
-  <p>5. Cuando la arañita cambie a verde,
-    comenzará la experiencia automáticamente.
-  </p>
-</section>
+      <p>
+        3. Sigue las instrucciones
+        que aparecen en pantalla.
+      </p>
+
+      <p>
+        4. Apunta con la arañita de la pantalla
+        al felpudo o a una superficie plana
+        frente a la puerta.
+      </p>
+
+      <p>
+        5. Cuando la arañita cambie a verde,
+        comenzará la experiencia automáticamente.
+      </p>
+
+    </section>
 
     <!-- SEGURIDAD -->
     <p class="small">
-      ⚠️ Utiliza la aplicación en una zona despejada.
-      Presta atención a tu entorno mientras
-      disfrutas de la experiencia. Abstenerse personas con ARACNOFOBIA.
+      ⚠️ Utiliza la aplicación en una zona
+      despejada y presta atención a tu entorno.
+      Evita caminar mirando exclusivamente
+      la pantalla.
     </p>
 
     <!-- PIE DE PAGINA -->
@@ -216,5 +296,19 @@
     </footer>
 
   </main>
+
+  <!-- CONTROL DEL BOTON -->
+  <script>
+    const downloadButton =
+      document.getElementById("downloadButton");
+
+    const downloadStatus =
+      document.getElementById("downloadStatus");
+
+    downloadButton.addEventListener("click", () => {
+      downloadStatus.style.display = "block";
+    });
+  </script>
+
 </body>
 </html>
