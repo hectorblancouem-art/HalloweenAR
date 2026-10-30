@@ -7,15 +7,23 @@
 
   <title>HalloweenAR | Experiencia inmersiva</title>
 
+  <!-- Vista previa para WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title"
+        content="HalloweenAR 🎃 | Experiencia inmersiva">
+  <meta property="og:description"
+        content="Este Halloween, la decoración cobra vida. ¿Te atreves a descubrir qué sucede?">
+  <meta property="og:image"
+        content="https://hectorblancouem-art.github.io/HalloweenAR/logo.png..png">
+  <meta property="og:url"
+        content="https://hectorblancouem-art.github.io/HalloweenAR/">
+
   <link rel="preconnect"
         href="https://fonts.googleapis.com">
-
   <link rel="preconnect"
         href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap"
+        rel="stylesheet">
 
   <style>
     * {
@@ -26,19 +34,16 @@
       margin: 0;
       min-height: 100vh;
       padding: 30px 20px;
-
       background: radial-gradient(
         ellipse at top,
         #42200e,
         #100c0c 65%,
         #050505
       );
-
       color: #f4e9df;
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
-      align-items: center;
       text-align: center;
     }
 
@@ -47,18 +52,14 @@
       max-width: 520px;
     }
 
-    /* LOGO */
-
     .logo {
       display: block;
-      width: 165px;
-      height: 165px;
+      width: 150px;
+      height: 150px;
       object-fit: contain;
       margin: 0 auto 12px;
       border-radius: 24px;
     }
-
-    /* TITULO */
 
     h1 {
       font-family: 'Creepster', cursive;
@@ -70,44 +71,34 @@
     }
 
     .subtitle {
-      font-size: 23px;
+      font-size: 21px;
       font-weight: bold;
       letter-spacing: 2px;
-      margin: 14px 0 25px;
+      margin: 14px 0 24px;
     }
 
-    /* DESCRIPCION */
-
     .description {
-      font-size: 18px;
+      font-size: 17px;
       color: #d5c7ba;
       line-height: 1.7;
     }
 
-    /* BOTON DESCARGA */
-
     .download {
       display: block;
-      margin: 32px 0 12px;
+      margin: 30px 0 12px;
       padding: 21px 14px;
-
       color: #180e08;
       background: #ff8727;
-
       border-radius: 14px;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 19px;
       text-decoration: none;
-
       box-shadow: 0 0 25px #6b300f;
-      transition: background 0.2s;
     }
 
     .download:hover {
       background: #ffa34d;
     }
-
-    /* ANIMACION DE ESPERA */
 
     #downloadStatus {
       display: none;
@@ -132,19 +123,12 @@
     }
 
     @keyframes loading {
-      from {
-        transform: translateX(-100%);
-      }
-
-      to {
-        transform: translateX(330%);
-      }
+      from { transform: translateX(-100%); }
+      to { transform: translateX(330%); }
     }
 
-    /* INSTRUCCIONES */
-
     .instructions {
-      margin-top: 32px;
+      margin-top: 28px;
       padding: 22px;
       background: #191310;
       border: 1px solid #674021;
@@ -158,21 +142,52 @@
       margin-top: 0;
     }
 
-    .instructions p {
-      line-height: 1.7;
+    .instructions h3 {
+      color: #ffb276;
+      font-size: 16px;
+      margin-top: 22px;
     }
 
-    /* AVISOS */
+    .instructions li {
+      line-height: 1.65;
+      margin-bottom: 12px;
+      padding-left: 3px;
+    }
+
+    .instructions ol {
+      padding-left: 22px;
+    }
+
+    .warning {
+      padding: 14px;
+      margin-top: 18px;
+      background: #35231b;
+      border-left: 3px solid #ff8727;
+      border-radius: 7px;
+      line-height: 1.6;
+      font-size: 14px;
+    }
 
     .small {
-      margin-top: 18px;
+      margin-top: 16px;
       color: #aaa09a;
       font-size: 13px;
       line-height: 1.6;
     }
 
+    .compatibility {
+      margin-top: 20px;
+      padding: 16px;
+      border: 1px solid #51443b;
+      border-radius: 12px;
+      color: #d0c4bc;
+      font-size: 14px;
+      line-height: 1.6;
+      text-align: left;
+    }
+
     footer {
-      margin-top: 36px;
+      margin-top: 35px;
       color: #81746b;
       font-size: 12px;
       line-height: 1.7;
@@ -183,21 +198,20 @@
 <body>
   <main>
 
-    <!-- LOGO ORIGINAL -->
+    <!-- LOGO -->
     <img
       src="logo.png..png"
       alt="Logo HalloweenAR"
       class="logo"
     >
 
-    <!-- TITULO -->
     <h1>HALLOWEEN AR</h1>
 
     <p class="subtitle">
       EXPERIENCIA INMERSIVA
     </p>
 
-    <!-- DESCRIPCION SIN SPOILERS -->
+    <!-- SIN SPOILERS -->
     <p class="description">
       Este Halloween, la decoración cobra vida.
       <br><br>
@@ -210,7 +224,7 @@
       </strong>
     </p>
 
-    <!-- DESCARGA APK -->
+    <!-- DESCARGA -->
     <a
       id="downloadButton"
       class="download"
@@ -218,77 +232,127 @@
       📱 DESCARGAR PARA ANDROID
     </a>
 
-    <!-- MENSAJE DE ESPERA -->
-    <div id="downloadStatus"
-         role="status"
-         aria-live="polite">
-
-      <p>
-        ⏳ Preparando descarga de HalloweenAR...
-      </p>
+    <div id="downloadStatus" role="status" aria-live="polite">
+      <p>⏳ Descarga solicitada...</p>
 
       <div class="loading-bar">
         <div class="loading-progress"></div>
       </div>
 
       <p class="small">
-        La descarga se gestiona desde tu navegador.
-        Consulta allí el progreso real.
+        Comprueba el progreso real en las
+        descargas de tu navegador.
       </p>
     </div>
 
     <p class="small">
-      Descarga gratuita · Android compatible con ARCore
+      Descarga gratuita · Archivo APK ·
+      Requiere Android compatible con ARCore
     </p>
 
-    <p class="small">
-      El archivo APK se descarga desde GitHub.
-      Android puede mostrar una advertencia
-      de seguridad al instalar aplicaciones
-      externas a Google Play.
-    </p>
-
-    <!-- INSTRUCCIONES -->
+    <!-- INSTALACION -->
     <section class="instructions">
 
-      <h2>🎃 Antes de comenzar</h2>
+      <h2>📲 Cómo instalar HalloweenAR</h2>
 
-      <p>
-        1. Descarga e instala HalloweenAR.
-      </p>
+      <h3>1. Descargar</h3>
+      <ol>
+        <li>
+          Pulsa el botón naranja
+          <strong>DESCARGAR PARA ANDROID</strong>.
+        </li>
+        <li>
+          Espera a que finalice la descarga.
+          Puedes comprobarla en el navegador.
+        </li>
+        <li>
+          Abre la aplicación
+          <strong>Archivos</strong> de tu teléfono
+          y entra en <strong>Descargas</strong>.
+        </li>
+      </ol>
 
-      <p>
-        2. Abre la aplicación y permite
-        el acceso a la cámara.
-      </p>
+      <h3>2. Instalar</h3>
+      <ol>
+        <li>
+          Busca el archivo
+          <strong>HalloweenAR.apk</strong>
+          y púlsalo.
+        </li>
+        <li>
+          Si Android solicita permiso para
+          instalar aplicaciones de esa fuente,
+          entra en los ajustes que te indique
+          y autoriza esa fuente únicamente
+          si confías en el archivo.
+        </li>
+        <li>
+          Regresa a la instalación y pulsa
+          <strong>Instalar</strong>.
+        </li>
+        <li>
+          Cuando termine, pulsa
+          <strong>Abrir</strong>.
+        </li>
+      </ol>
 
-      <p>
-        3. Sigue las instrucciones
-        que aparecen en pantalla.
-      </p>
+      <div class="warning">
+        ⚠️ <strong>Sobre la seguridad:</strong>
+        Android puede mostrar advertencias
+        al instalar un APK fuera de Google Play.
+        Comprueba que lo has descargado
+        desde nuestro enlace de GitHub.
+        Si el sistema bloquea el archivo
+        por motivos de seguridad,
+        no desactives Google Play Protect.
+      </div>
 
-      <p>
-        4. Apunta con la arañita de la pantalla
-        al felpudo o a una superficie plana
-        frente a la puerta.
-      </p>
-
-      <p>
-        5. Cuando la arañita cambie a verde,
-        comenzará la experiencia automáticamente.
-      </p>
-
+      <h3>3. Comenzar la experiencia</h3>
+      <ol>
+        <li>
+          Abre HalloweenAR y permite
+          el acceso a la cámara.
+        </li>
+        <li>
+          Sigue las instrucciones
+          que aparecen en pantalla.
+        </li>
+        <li>
+          Apunta con la arañita de la pantalla
+          al felpudo o a una superficie plana
+          frente a una puerta.
+        </li>
+        <li>
+          Cuando la arañita cambie a verde,
+          comenzará automáticamente
+          la experiencia.
+        </li>
+      </ol>
     </section>
+
+    <!-- COMPATIBILIDAD -->
+    <div class="compatibility">
+      <strong>🍎 ¿Tienes iPhone?</strong>
+      <p>
+        Esta versión de HalloweenAR solo
+        está disponible para Android.
+        Los archivos APK no se pueden
+        instalar en iPhone.
+      </p>
+      <p>
+        Puedes disfrutar de la experiencia
+        utilizando un móvil Android compatible.
+      </p>
+    </div>
 
     <!-- SEGURIDAD -->
     <p class="small">
       ⚠️ Utiliza la aplicación en una zona
       despejada y presta atención a tu entorno.
-      Evita caminar mirando exclusivamente
+      No camines mirando exclusivamente
       la pantalla.
     </p>
 
-    <!-- PIE DE PAGINA -->
     <footer>
       HalloweenAR © 2026
       <br>
@@ -297,7 +361,6 @@
 
   </main>
 
-  <!-- CONTROL DEL BOTON -->
   <script>
     const downloadButton =
       document.getElementById("downloadButton");
